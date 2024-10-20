@@ -1,0 +1,73 @@
+@import '@fontsource/geist-sans/100.css';
+@import '@fontsource/geist-sans/200.css';
+@import '@fontsource/geist-sans/300.css';
+@import '@fontsource/geist-sans/400.css';
+@import '@fontsource/geist-sans/500.css';
+@import '@fontsource/geist-sans/600.css';
+@import '@fontsource/geist-sans/700.css';
+@import '@fontsource/geist-sans/800.css';
+@import '@fontsource/geist-sans/900.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	:root {
+		/* --background: 0 0% 95%; */
+		--background: 45 13% 92%;
+		--foreground: 150 20% 25%;
+		--muted: 46 15% 83%;
+		--muted-foreground: 119 8% 45%;
+		--popover: 0 0% 95%;
+		--popover-foreground: 150 20% 25%;
+		/* --card: 0 0% 95%; */
+		--card: 45 13% 88%;
+		--card-foreground: 150 20% 25%;
+		--border: 46 15% 83%;
+		--input: 46 15% 83%;
+		--primary: 131 22% 29%;
+		--primary-foreground: 0 0% 95%;
+		--secondary: 46 15% 83%;
+		--secondary-foreground: 131 22% 29%;
+		--accent: 82 20% 62%;
+		--accent-foreground: 0 0% 95%;
+		--destructive: 0 71.57% 60%;
+		--destructive-foreground: 60 9.1% 97.8%;
+		--ring: 150 20% 25%;
+		--radius: 0.5rem;
+	}
+
+	.dark {
+		--background: 150 20% 25%;
+		/* --background: 153 20% 20%; */
+		--foreground: 0 0% 95%;
+		--muted: 150.91 20.25% 31.96%;
+		--muted-foreground: 46 15% 83%;
+		--popover: 150 20% 25%;
+		--popover-foreground: 0 0% 95%;
+		/* --card: 150 20% 25%; */
+		--card: 153 20% 20%;
+		--card-foreground: 0 0% 95%;
+		--border: 150 19.51% 16.08%;
+		--input: 150 19.51% 16.08%;
+		--primary: 46 15% 83%;
+		--primary-foreground: 150 20% 25%;
+		--secondary: 0 0% 95%;
+		--secondary-foreground: 150 20% 25%;
+		--accent: 82 20% 62%;
+		--accent-foreground: 150 20% 25%;
+		--destructive: 0 71.57% 60%;
+		--destructive-foreground: 0 0% 95%;
+		--ring: 150.91 20.25% 31.96%;
+	}
+}
+
+@layer base {
+	* {
+		@apply border-border;
+	}
+	body {
+		@apply bg-background text-foreground;
+	}
+}

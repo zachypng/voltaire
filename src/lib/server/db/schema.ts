@@ -49,4 +49,17 @@ const sessions = sqliteTable('sessions', {
 	...timestamp
 });
 
-export { sessions, users };
+const passwordResets = sqliteTable('password_resets', {
+	tokenHash: text('token_hash').notNull().unique(),
+	userId: text('user_id')
+		.notNull()
+		.references(() => users.id),
+	createdAt: integer('created_at', { mode: 'timestamp' })
+		.notNull()
+		.$defaultFn(() => new Date()),
+	expiresAt: integer('expires_at', { mode: 'timestamp' })
+		.notNull()
+		.$defaultFn(() => new Date(Date.now() + 1000 * 60 * 60 * 2))
+});
+
+export { sessions, users, passwordResets };

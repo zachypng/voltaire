@@ -57,6 +57,7 @@
 		"lucide-svelte": "^0.446.0",
 		"mode-watcher": "^0.4.1",
 		"paneforge": "^0.0.6",
+		"svelte-email": "^0.0.4",
 		"svelte-inview": "^4.0.4",
 		"svelte-motion": "^0.12.2",
 		"svelte-sonner": "^0.3.28",

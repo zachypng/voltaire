@@ -9,8 +9,9 @@
 	import { LogOut } from 'lucide-svelte';
 	import { getUserAvatar } from '$lib/utils';
 	import { UserCog, Cog, Users, BellRing } from 'lucide-svelte';
+	import { type User } from 'lucia';
 
-	$: user = $page.data.user;
+	$: user = $page.data.user as User;
 	$: session = $page.data.session;
 
 	let logoutForm: HTMLFormElement;
@@ -23,7 +24,7 @@
 </script>
 
 <nav
-	class="sticky top-0 z-50 hidden justify-around px-12 backdrop-blur supports-[backdrop-filter]:bg-border/60 lg:flex lg:items-center lg:border-b lg:border-muted lg:px-96 lg:py-4"
+	class="sticky top-0 z-50 hidden justify-around px-12 backdrop-blur supports-[backdrop-filter]:bg-border/60 md:flex md:items-center md:border-b md:border-muted md:px-32 md:py-4 lg:px-64"
 >
 	<div class="flex items-center gap-6">
 		<div class="flex items-center gap-2">
@@ -63,16 +64,16 @@
 						>
 						<DropdownMenu.Separator />
 
-						<DropdownMenu.Item class="text-muted-foreground"
+						<DropdownMenu.Item class="text-muted-foreground" href="/settings/profile"
 							><UserCog class="mr-2 h-4 w-4" />Profile</DropdownMenu.Item
 						>
-						<DropdownMenu.Item class="text-muted-foreground"
+						<DropdownMenu.Item class="text-muted-foreground" href="/settings/account"
 							><Cog class="mr-2 h-4 w-4" />Account</DropdownMenu.Item
 						>
-						<DropdownMenu.Item class="text-muted-foreground"
+						<DropdownMenu.Item class="text-muted-foreground" href="/clubs"
 							><Users class="mr-2 h-4 w-4" />My Clubs</DropdownMenu.Item
 						>
-						<DropdownMenu.Item class="text-muted-foreground"
+						<DropdownMenu.Item class="text-muted-foreground" href="/notifications"
 							><BellRing class="mr-2 h-4 w-4" />Notifications</DropdownMenu.Item
 						>
 					</DropdownMenu.Group>

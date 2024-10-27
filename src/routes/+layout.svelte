@@ -9,8 +9,10 @@
 <Toaster
 	toastOptions={{
 		classes: {
-			error: 'text-base bg-destructive border-destructive text-destructive-foreground'
-		}
+			error: 'text-base bg-destructive border-destructive text-destructive-foreground',
+			success: 'text-base bg-border border-muted text-muted-foreground'
+		},
+		duration: 5000
 	}}
 />
 

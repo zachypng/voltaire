@@ -32,12 +32,24 @@ type FlyAndScaleParams = {
 	duration?: number;
 };
 
-type Avatar = {
-	name: string;
+export type Avatar = {
+	name:
+		| 'bird'
+		| 'cat'
+		| 'dog'
+		| 'fish'
+		| 'origami'
+		| 'rabbit'
+		| 'rat'
+		| 'snail'
+		| 'squirrel'
+		| 'turtle'
+		| 'user'
+		| 'worm';
 	icon: ComponentType<Icon>;
 };
 
-const avatars: Avatar[] = [
+export const avatars: Avatar[] = [
 	{
 		name: 'bird',
 		icon: Bird
@@ -131,5 +143,8 @@ export const flyAndScale = (
 
 export function getUserAvatar(user: User) {
 	const avatar = avatars.find((avatar) => avatar.name === user.avatar);
-	return avatar?.icon;
+	if (!avatar) {
+		return UserIcon;
+	}
+	return avatar.icon;
 }
